@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>le mode classé</title>
+</head>
+<body>
+    <h1> le mode classé </h1>
+
+ <style>
+    
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #1a202c;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-input {
+            width: 280px;
+            max-width: calc(100% - 40px);
+            padding: 14px 16px;
+            margin: 10px 0;
+            border: 2px solid #cbd5e1;
+            border-radius: 12px;
+            background: #ffffff;
+            font-size: 16px;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            outline: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-input:hover {
+            transform: translateY(-2px);
+            border-color: #60a5fa;
+            box-shadow: 0 8px 20px rgba(96, 165, 250, 0.15);
+        }
+
+        .form-input:focus {
+            border-color: #3182ce;
+            background: #eef6ff;
+            box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.18);
+        }
+
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .checkbox-row label {
+            font-size: 14px;
+            color: #334155;
+        }
+
+        .checkbox-row input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #3182ce;
+            cursor: pointer;
+        }
+
+</style>
+
+
+
+<button onclick="window.location.href='commencerclassé.html'"class='form-input'>commencez ! </button>
+
+<script>
+</script>
+
+</body>
+</html>
