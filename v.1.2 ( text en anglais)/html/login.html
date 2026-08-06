@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
+    <link rel="stylesheet" href="buttonscript.py">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -68,18 +69,38 @@
             accent-color: #3182ce;
             cursor: pointer;
         }
+
+        .start-button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            background: #3182ce;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .start-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
     </style>
 </head>
-<br>
+<body>
     <h1>login</h1>
 
-    <input type="text" placeholder="enter your pseudo" class="form-input">
-    <input type="email" placeholder="enter your email" class="form-input">
+    <form id="loginForm">
+        <br><input type="text" id="pseudo" placeholder="enter your pseudo" class="form-input" required></br>
+        <br><input type="email" id="email" placeholder="enter your email" class="form-input" required></br>
 
-    <div class="checkbox-row">
-        <input type="checkbox" id="terms">
-        <label for="terms">accepte les conditions d'utilisation</label>
-    </div>
+        <div class="checkbox-row">
+            <input type="checkbox" id="terms">
+            <label for="terms"> accept the terms of use</label>
+        </div>
+
+        <button type="submit" id="startButton" class="start-button" disabled onclick="window.location.href='le-mode-normal.html'">Commencer</button>
+    </form>
 
 
 <br class="text_utilisations ">
@@ -88,7 +109,7 @@
         <br><h7>vous vous engagez a ne faire preuve d'aucune </h7><br> 
         <br><h7>acte de discrimination...</h7></br>
      </div>
-        <label for="savoir_plus"><button onclick="window.location.href='condition_dutilisations.html'"class='button_en_savoir_plus'>en savoir plus </button></label>
+        <label for="savoir_plus"><button onclick="window.location.href='term of use.html'"class='button_en_savoir_plus'>learn more... </button></label>
         <style>
             .button_en_savoir_plus{
                 background: none;
@@ -105,7 +126,28 @@
 
 
 
+<script>
+    const form = document.getElementById('loginForm');
+    const pseudo = document.getElementById('pseudo');
+    const email = document.getElementById('email');
+    const terms = document.getElementById('terms');
+    const startButton = document.getElementById('startButton');
 
+    function validateForm() {
+        const isFilled = pseudo.value.trim().length >= 4 && email.value.trim() !== '' && terms.checked;
+        startButton.disabled = !isFilled;
+    }
+
+    [pseudo, email, terms].forEach(input => {
+        input.addEventListener('input', validateForm);
+        input.addEventListener('change', validateForm);
+    });
+
+    
+    
+
+    validateForm();
+</script>
 
 </body>
 </html>

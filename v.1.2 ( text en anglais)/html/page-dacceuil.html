@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page d'acceuil</title>
+    <link href="style.css" rel="stylesheet" />
+
+     
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
+}
+
+.top-right-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.top-right-buttons .form-input {
+    width: auto;
+    max-width: none;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.salut {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+    font-size: large;
+    padding: 10px 0;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #1a202c;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.form-input {
+    width: 280px;
+    max-width: calc(100% - 40px);
+    padding: 14px 16px;
+    margin: 10px 0;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    background: #ffffff;
+    font-size: 16px;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    outline: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-input:hover {
+    transform: translateY(-2px);
+    border-color: #60a5fa;
+    box-shadow: 0 8px 20px rgba(96, 165, 250, 0.15);
+}
+
+.form-input:focus {
+    border-color: #3182ce;
+    background: #eef6ff;
+    box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.18);
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.checkbox-row label {
+    font-size: 14px;
+    color: #334155;
+}
+
+.checkbox-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #3182ce;
+    cursor: pointer;
+}
+</style>
+
+
+</head>
+<body>
+
+<div class="top-right-buttons">
+    <button onclick="window.location.href='login.html'" class="form-input">login</button>
+    <button onclick="window.location.href='create-account.html'" class="form-input">create account</button>
+</div>
+
+<center><h1>mystery répertory</h1></center>
+
+<button onclick="window.location.href='my-project.html'" class="form-input">notre projet(béta)</button>
+
+
+
+
+
+<div  class="form-input" button onclick="window.location.href='le-mode-normal.html'"> 
+
+ <h2>le mode normal</h2>
+      <h4>entrainez vous </h4>
+     <h4>battez des record ! </h4>
+      <h4> et amusez vous ! </h4>
+
+
+</div>
+
+
+    
+</center>
+
+
+
+<center><div button onclick="window.location.href='le-mode-classe.html'"class='form-input''></button>
+
+
+    <h2>le mode classé</h2>
+        <h4>augmentez en niveau ! </h4>
+        <h4>atteigne le sommet du classement</h4>
+        <h4>et achetez des améliorations ! </h4> 
+
+</div>
+ <style>
+    .buttonclasséetnormal{
+        background-color: aliceblue;
+        border:none;
+        margin: 25px;
+        
+    }
+    
+</style>
+
+
+
+</center>
+
+</body>
+</html>

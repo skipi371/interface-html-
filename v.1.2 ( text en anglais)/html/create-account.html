@@ -75,29 +75,65 @@
             cursor: pointer;
         }
 
+        .start-button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            background: #3182ce;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-    
+        .start-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
 
 </style>
 
-<center><input type="email" placeholder="enter email" class="form-input"></center>
-<center><input type="email" placeholder="enter pseudo" class="form-input"></center>
-<center><input type="email" placeholder="entrer phone " class="form-input"></center>
-<center><input type="email" placeholder="enter age" class="form-input"></center>
+<form id="createAccountForm">
+    <center><input type="email" id="email" placeholder="enter email" class="form-input" required></center>
+    <center><input type="text" id="pseudo" placeholder="enter pseudo" class="form-input" required></center>
+    <center><input type="tel" id="phone" placeholder="enter phone" class="form-input" required></center>
+    <center><input type="number" id="age" placeholder="enter age" class="form-input" required></center>
 
-
-<button onclick="window.location.href='page_dacceuil.html'" class="form-input"> c'est parti ! </button>
-
-
-
-
+    <center><button type="submit" id="startButton" class="start-button" disabled onclick="window.location.href='le-mode-classe.html'">c'est parti !</button></center>
+</form>
 
 
 
 
 
 
+<script>
+    const form = document.getElementById('createAccountForm');
+    const email = document.getElementById('email');
+    const pseudo = document.getElementById('pseudo');
+    const phone = document.getElementById('phone');
+    const age = document.getElementById('age');
+    const startButton = document.getElementById('startButton');
+    const terms = document.getElementById('terms');
 
-    
+    function validateForm() {
+        const isFilled = pseudo.value.trim().length >= 5 && email.value.trim() !== '' && terms.checked;
+        startButton.disabled = !isFilled;
+    }
+
+    [email, pseudo, phone, age].forEach(input => {
+        input.addEventListener('input', validateForm);
+    });
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (!startButton.disabled) {
+            window.location.href = 'page-dacceuil.html';
+        }
+    });
+
+    validateForm();
+</script>
+
 </body>
 </html>
